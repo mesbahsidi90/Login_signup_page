@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- === css file ========================== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- === font google ==================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- === font icon================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Login</div>
+        <div class="title signup">Signup</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slider" id="login" checked />
+          <input type="radio" name="slider" id="signup" />
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Signup</label>
+          <div class="slide-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="#" class="login">
+            <div class="filed">
+              <input type="text" placeholder="Email Address" required />
+            </div>
+            <div class="filed">
+              <input type="password" placeholder="Password" required />
+            </div>
+            <div class="pass-link">
+              <a href="#">Forgot password</a>
+            </div>
+            <div class="filed">
+              <input type="submit" value="Login" />
+            </div>
+            <div class="signup-link">
+              Not a member? <a href="">Signup now</a>
+            </div>
+          </form>
+          <form action="#" class="signup">
+            <div class="filed">
+              <input type="text" placeholder="Email Address" required />
+            </div>
+            <div class="filed">
+              <input type="password" placeholder="Password" required />
+            </div>
+            <div class="filed">
+              <input type="password" placeholder="Confirm Password" required />
+            </div>
+            <div class="filed">
+              <input type="submit" value="Signup" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const loginForm = document.querySelector("form.login");
+      const signupForm = document.querySelector("form.signup");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signuplink = document.querySelector(".signup-link a");
+      const loginText = document.querySelector(".title-text .login");
+      const signupText = document.querySelector(".title-text .signup");
+
+
+      signupBtn.onclick = (() => {
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (() => {
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      signuplink.onclick = (() => {
+        signupBtn.click();
+        return false;
+      });
+    </script>
+  </body>
+</html>
